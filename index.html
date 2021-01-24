@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+    <title>Sadat-Saim | FAQ Accordion Card</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+        .attribution {
+            font-size: 11px;
+            text-align: center;
+        }
+        
+        .attribution a {
+            color: hsl(228, 45%, 44%);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-image: linear-gradient(to bottom, #af67e9, #9f67e9, #8d66e9, #7a66e8, #6565e7);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .container {
+            display: flex;
+            margin: auto;
+            background-color: #fff;
+            width: 700px;
+            height: 350px;
+            border-radius: 20px;
+            margin-bottom: 200px;
+        }
+        
+        .contribution {
+            padding: 20px;
+            border: none;
+        }
+        
+        .images {
+            width: 50%;
+            background-image: url("images/bg-pattern-desktop.svg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center left;
+            background-size: 600px 580px;
+        }
+        
+        .images .main {
+            width: 290px;
+            position: relative;
+            top: 96px;
+            left: -34px;
+        }
+        
+        .box {
+            width: 93px;
+            position: relative;
+            z-index: 22;
+            top: -39px;
+            left: -42px;
+        }
+        
+        .texts {
+            font-size: 12px;
+            overflow-y: scroll;
+            justify-content: center;
+            width: 50%;
+            padding: 20px 0;
+            padding-right: 20px;
+        }
+        
+        .texts::-webkit-scrollbar {
+            width: 0px;
+        }
+        
+        .texts h1 {
+            padding: 10px 0;
+        }
+        
+        .single,
+        p {
+            line-height: 1.5;
+            border-bottom: 1px solid #ccc;
+        }
+        
+        .heading {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 15px 0px;
+            transition: 0.2s ease;
+            text-align: left;
+        }
+        
+        .heading:hover {
+            color: #F58361;
+        }
+        
+        .heading-toggle {
+            font-weight: normal;
+        }
+        
+        .down {
+            width: 15px;
+            height: 10px;
+            margin-top: 7px;
+            transition: 0.5s ease;
+        }
+        
+        .toogle {
+            transform: rotate(180deg);
+            transition: 0.5s ease;
+        }
+        
+        .hidden-text,
+        p {
+            color: rgb(165, 165, 165);
+            padding: 0px 0 5px;
+        }
+        
+        .text {
+            transition: 2s ease-out;
+            display: none;
+        }
+        
+        @media (max-width: 710px) {
+            .container {
+                width: 600px;
+                height: 300px;
+            }
+            .images .main {
+                width: 250px;
+                left: -25px;
+            }
+            .images {
+                background-position: top left;
+                background-size: 280px 480px;
+            }
+            .box {
+                top: -25px;
+                left: -26px;
+            }
+            .heading {
+                padding: 15px 0px;
+            }
+        }
+        
+        @media (max-width: 610px) {
+            body {
+                height: 115vh;
+            }
+            .container {
+                flex-direction: column;
+                width: 70%;
+                height: 80%;
+                justify-content: center;
+                align-items: center;
+                background-color: #fff;
+                margin-bottom: 30px;
+            }
+            .texts {
+                font-size: 12px;
+                overflow-y: scroll;
+                justify-content: center;
+                width: 90%;
+                height: 75%;
+                padding: 20px 0;
+            }
+            .images {
+                width: 90%;
+                height: 20%;
+                background-position: center left;
+                background-size: 600px 580px;
+            }
+            .images .main {
+                width: 70%;
+                top: -75%;
+                left: 50%;
+                transform: translate(-50%);
+            }
+            .box {
+                width: 25%;
+            }
+            .contribution {
+                padding: 5px;
+                margin-bottom: 5px;
+            }
+            .heading {
+                padding: 15px 0px;
+            }
+        }
+        
+        @media (max-width: 510px) {
+            .container {
+                flex-direction: column;
+                width: 85%;
+                height: 80%;
+                transition: height 0.3s ease;
+            }
+            .images {
+                background-position: center;
+                background-size: 100px 100px;
+                background-image: url("images/bg-pattern-desktop.svg");
+            }
+            p {
+                padding: 2px;
+            }
+        }
+        /* @media (max-width: 410px) {
+            body {
+                height: 130vh;
+            }
+        } */
+    </style>
+</head>
+
+<body>
+    <p class="contribution">Made by Sadat-saim</p>
+    <div class="container">
+        <div class="images">
+            <img class="main" src="images/illustration-woman-online-desktop.svg">
+            <img class="box" src="images/illustration-box-desktop.svg">
+        </div>
+        <div class="texts">
+            <h1>FAQ</h1>
+            <div class="single">
+                <h3 class="heading">
+                    How many people can join? <img class="down toogle" src="images/icon-arrow-down.svg">
+                </h3>
+                <p class="hidden-text">
+                    Your challenge is to build out this FAQ accordion card and get it looking as close to the design as possible.
+                </p>
+            </div>
+            <div class="single">
+                <h3 class="heading">
+                    What is Lorem Ipsum? <img class="down toogle" src="images/icon-arrow-down.svg">
+                </h3>
+                <p class="hidden-text">
+                    Your challenge is to build out this FAQ accordion card and get it looking as close to the design as possible.
+                </p>
+            </div>
+            <div class="single">
+                <h3 class="heading">
+                    Why do we use it? <img class="down toogle" src="images/icon-arrow-down.svg">
+                </h3>
+                <p class="hidden-text">
+                    Your challenge is to build out this FAQ accordion card and get it looking as close to the design as possible.
+                </p>
+            </div>
+            <div class="single">
+                <h3 class="heading">
+                    Where does it come from? <img class="down toogle" src="images/icon-arrow-down.svg">
+                </h3>
+                <p class="hidden-text">
+                    Your challenge is to build out this FAQ accordion card and get it looking as close to the design as possible.
+                </p>
+            </div>
+            <div class="single">
+                <h3 class="heading">
+                    Where can I get some? <img class="down toogle" src="images/icon-arrow-down.svg">
+                </h3>
+                <p class="hidden-text">
+                    Your challenge is to build out this FAQ accordion card and get it looking as close to the design as possible.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        const arrows = document.querySelectorAll(".down");
+        // const text = document.querySelectorAll(".hidden-text");
+
+        arrows.forEach(function(arrow) {
+            arrow.addEventListener("click", move);
+        })
+
+        function move(e) {
+            e.target.classList.toggle("toogle");
+
+            e.target.parentElement.nextElementSibling.classList.toggle("text");
+            e.target.parentElement.classList.toggle("heading-toggle");
+
+        }
+    </script>
+
+</body>
+
+</html>
